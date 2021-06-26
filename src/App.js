@@ -92,13 +92,14 @@ export default class App extends React.Component {
 		return (
 			<div className="app">
 				<div className="app-header">
-					<h2 style={{ margin: "1rem 0" }}>Search photos</h2>
+					<h2 style={{ margin: "1rem 0" }}>Search Photos</h2>
 					<div className="h-flex jc ac search-bar">
 						<input
 							type="text"
 							className="search-input"
 							value={this.state.searchText}
 							onChange={this.onSearchInputChange}
+							placeholder="type something"
 						/>
 					</div>
 					
@@ -107,7 +108,7 @@ export default class App extends React.Component {
 				<div className="app-content" ref="appContent">
 					{this.state.imageList.length
 						? <ImageList images={this.state.imageList} onImageClick={this.handleImageClick} />
-						: <p style={{ margin: "1rem 0" }}>Try searching for some image in the search bar</p>}
+						: <p style={{ margin: "1rem 0" }}>Type in the search bar for searching the images</p>}
 					<ReactCSSTransitionGroup
 						transitionName="popup-container"
 						transitionEnterTimeout={400}
