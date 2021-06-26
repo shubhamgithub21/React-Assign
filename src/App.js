@@ -92,7 +92,7 @@ export default class App extends React.Component {
 		return (
 			<div className="app">
 				<div className="app-header">
-					<h2 style={{ margin: "1rem 0" }}>Flickr Search</h2>
+					<h2 style={{ margin: "1rem 0" }}>Search photos</h2>
 					<div className="h-flex jc ac search-bar">
 						<input
 							type="text"
@@ -102,16 +102,7 @@ export default class App extends React.Component {
 						/>
 					</div>
 					{this.state.queries.length > 0 &&
-						<div style={{ marginTop: "16px" }}>
-							<h5 style={{ marginBottom: "5px" }}>Recent Searches</h5>
-							<ul className="h-flex jc">
-								{this.state.queries.map((query, idx) =>
-									<li key={idx} className="query">
-										{query}
-									</li>
-								)}
-							</ul>
-						</div>}
+						
 				</div>
 				<div className="app-content" ref="appContent">
 					{this.state.imageList.length
