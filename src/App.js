@@ -99,7 +99,6 @@ export default class App extends React.Component {
 							className="search-input"
 							value={this.state.searchText}
 							onChange={this.onSearchInputChange}
-							placeholder="type something"
 						/>
 					</div>
 					
