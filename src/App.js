@@ -101,7 +101,7 @@ export default class App extends React.Component {
 							onChange={this.onSearchInputChange}
 						/>
 					</div>
-					{this.state.queries.length > 0 &&
+					
 						
 				</div>
 				<div className="app-content" ref="appContent">
