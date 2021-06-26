@@ -18,7 +18,7 @@ export default class App extends React.Component {
 			popUpImage: null,
 			queries: queriesFromStorage ? queriesFromStorage : []
 		};
-		// Function bindings
+		
 		this.onSearchInputChange = this.onSearchInputChange.bind(this);
 		this.handleImageClick = this.handleImageClick.bind(this);
 		this.onPopUpHide = this.onPopUpHide.bind(this);
@@ -26,19 +26,19 @@ export default class App extends React.Component {
 	}
 
 	componentDidMount() {
-		/* Throttled scroll listener for infinite scrolling */
+		
 		window.onscroll = throttle(() => {
 			if (scrollAreaAvailable()) return;
 			this.handleScroll();
 		}, 1000);
 
-		/* Debounced function for search based on input text to mimimize network request on every character typed */
+		
 		this.makeDebouncedSearch = debounce(() => {
-			/* Save search query */
+			
 			this.state.queries.push(this.state.searchText);
 			this.setState({ queries: this.state.queries }, this.updateLocalStorage());
 
-			/* Make API call for the query */
+			
 			const url = constants.BASE_URL + "&text=" + this.state.searchText;
 			fetch(url)
 				.then(checkHttpStatus)
@@ -122,7 +122,7 @@ export default class App extends React.Component {
 	}
 
 	componentWillUnmount() {
-		// Remove the listener for cleanup
+		
 		window.onscroll = undefined;
 	}
 }
